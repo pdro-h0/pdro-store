@@ -5,6 +5,7 @@ import './globals.css'
 import { AuthProvider } from './providers/auth'
 
 import Header from '@/components/ui/Header'
+import Footer from '@/components/ui/Footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Header />
           {children}
         </body>
+        <Footer />
       </AuthProvider>
     </html>
   )
