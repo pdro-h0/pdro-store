@@ -5,10 +5,12 @@ import React from "react";
 import { signIn, signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 
+import Link from "next/link"
+
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Card } from "./card";
 import { Button } from "./button";
-import { Sheet, SheetTrigger, SheetContent, SheetHeader } from "./sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetClose } from "./sheet";
 import { Separator } from "./separator";
 
 import {
@@ -88,10 +90,15 @@ const Header = () => {
               Ofertas
             </Button>
 
-            <Button variant="outline" className="w-full justify-start gap-2">
-              <ListOrderedIcon size={16} />
-              Catálogo
-            </Button>
+            <SheetClose asChild>
+              <Link
+              href="/catalog">
+                <Button variant="outline" className="w-full justify-start gap-2">
+                  <ListOrderedIcon size={16} />
+                  Catálogo
+                </Button>
+              </Link>
+            </SheetClose>
           </div>
         </SheetContent>
       </Sheet>
