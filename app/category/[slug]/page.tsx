@@ -28,7 +28,7 @@ const CategoryProducts = async ({ params }: any) => {
         variant="outline"
       >
         {CATEGORY_ICON[params.slug as keyof typeof CATEGORY_ICON]}
-        {params.slug}
+        {category.name}
       </Badge>
 
       <div className="grid grid-cols-2 gap-8">
