@@ -5,6 +5,7 @@ import React from "react";
 import { ProductWithTotalPrice } from "@/app/helpers/product";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown } from "lucide-react";
+import DiscountBadge from "@/components/ui/DiscountBadge";
 
 interface ProductItemProps {
   product: ProductWithTotalPrice;
@@ -28,10 +29,9 @@ const ProductItem = ({ product }: ProductItemProps) => {
           />
 
           {product.discountPercentage > 0 && (
-            <Badge className="absolute left-2 top-2">
-              <ArrowDown size={14} />
-              {product.discountPercentage}%
-            </Badge>
+            <DiscountBadge className="absolute left-3 top-3">
+              {product.discountPercentage}
+            </DiscountBadge>
           )}
         </div>
       </Link>
