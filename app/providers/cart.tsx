@@ -7,7 +7,7 @@ export interface CartProduct extends ProductWithTotalPrice {
   quantity: number;
 }
 
-interface ICartContext {
+export interface ICartContext {
   products: CartProduct[];
   cartTotalPrice: number;
   cartBasePrice: number;
@@ -26,6 +26,26 @@ export const CartContext = createContext<ICartContext>({
 const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>([]);
   const addProductToCart = (product: CartProduct) => {
+    const productAlreadyOnCart = products.some(
+      (cartProduct) => cartProduct.id === product.id,
+    )
+
+    if (productAlreadyOnCart) {
+      setProducts((prev) =>
+        prev.map((cartProduct) => {
+          if (cartProduct.id === product.id) {
+            return {
+              ...cartProduct,
+              quantity: cartProduct.quantity + product.quantity,
+            };
+          }
+
+          return cartProduct;
+        }),
+      );
+
+      return;
+    }
     setProducts((prev) => [product, ...prev]);
   };
 
