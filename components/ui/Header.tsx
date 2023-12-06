@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react";
 
 import Link from "next/link"
 
+import Cart from "./Cart";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Card } from "./card";
 import { Button } from "./button";
@@ -110,9 +111,17 @@ const Header = () => {
         </h1>
       </Link>
 
-      <Button size="icon" variant="outline">
-        <ShoppingCartIcon />
-      </Button>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size="icon" variant="outline">
+            <ShoppingCartIcon />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent>
+          <Cart />
+        </SheetContent>
+      </Sheet>  
     </Card>
   );
 };
