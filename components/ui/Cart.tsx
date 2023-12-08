@@ -4,9 +4,10 @@ import { ShoppingCart } from "lucide-react";
 import { CartContext } from "@/app/providers/cart";
 import CartItem from "./CartItem";
 import { computeProductTotalPrice } from "@/app/helpers/product";
+import { Separator } from "@radix-ui/react-separator";
 
 const Cart = () => {
-  const { products } = useContext(CartContext);
+  const { products, subtotal, total, totalDiscount } = useContext(CartContext);
 
   return (
     <div className="flex flex-col gap-8">
@@ -15,16 +16,50 @@ const Cart = () => {
         variant="outline"
       >
         <ShoppingCart size={16} />
-        Catálogo
+        Carrinho
       </Badge>
 
       <div className="flex flex-col gap-5">
-        {products.map((product) => (
-          <CartItem
-            key={product.id}
-            product={computeProductTotalPrice(product as any) as any}
-          />
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <CartItem
+              key={product.id}
+              product={computeProductTotalPrice(product as any) as any}
+            />
+          ))
+        ) : (
+          <p className="text-center font-semibold">Carrinho Vazio!</p>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <Separator />
+
+        <div className="flex items-center justify-between text-xs">
+          <p>Subtotal</p>
+          <p>R$ {subtotal.toFixed(2)}</p>
+        </div>
+
+        <Separator />
+
+        <div className="flex items-center justify-between text-xs">
+          <p>Entrega</p>
+          <p>Grátis</p>
+        </div>
+
+        <Separator />
+
+        <div className="flex items-center justify-between text-xs">
+          <p>Desconto</p>
+          <p>- R$ {totalDiscount.toFixed(2)}</p>
+        </div>
+
+        <Separator />
+
+        <div className="flex items-center justify-between text-sm font-semibold">
+          <p>Total</p>
+          <p>R$ {total.toFixed(2)}</p>
+        </div>
       </div>
     </div>
   );
