@@ -54,6 +54,7 @@ const Cart = () => {
         </ScrollArea>
       </div>
 
+      {products.length > 0 &&
       <div className="flex flex-col gap-3">
         <Separator />
 
@@ -89,7 +90,7 @@ const Cart = () => {
         >
           Finalizar Compra
         </Button>
-      </div>
+      </div>}
     </div>
   );
 };
