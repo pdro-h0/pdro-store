@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import Categories from "./components/Categories";
 import ProductList from "@/components/ui/ProductList";
-import SectionTitle from "@/app/(home)/components/sectionTitle";
+import SectionTitle from "./components/SectionTitle";
 import PromoBanner from "./components/PromoBanner";
 
 export default async function Home() {
