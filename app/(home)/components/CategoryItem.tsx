@@ -16,7 +16,7 @@ const CategoryItem = ({ category }: CategoryItem) => {
     href={`/category/${category.slug}`}>
       <Badge
         variant="outline"
-        className="flex items-center justify-center gap-2 rounded-lg py-3"
+        className="flex items-center justify-center gap-2 rounded-lg py-3 lg:w-48"
       >
         {CATEGORY_ICON[category.slug as keyof typeof CATEGORY_ICON]}
         <span className="text-xs font-bold">{category.name}</span>
