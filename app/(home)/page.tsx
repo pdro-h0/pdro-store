@@ -51,9 +51,9 @@ export default async function Home() {
 
       <div className="lg:px-24">
         <SectionTitle title="ofertas" />
-        <ScrollArea className="hidden lg:block">
+        <ScrollArea >
           <ProductList products={deals} />
-          <ScrollBar orientation="horizontal" />
+          <ScrollBar orientation="horizontal" className="max-sm:hidden" />
         </ScrollArea>
       </div>
 
