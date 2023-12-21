@@ -12,8 +12,8 @@ export const createCheckout = async (products: CartProduct[]) => {
   const checkout = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     mode: "payment",
-    success_url: "http://localhost:3000",
-    cancel_url: "http://localhost:3000",
+    success_url: "https://pdro-store-pdro-h0.vercel.app",
+    cancel_url: "https://pdro-store-pdro-h0.vercel.app",
     line_items: products.map((product) => {
       return {
         price_data: {
