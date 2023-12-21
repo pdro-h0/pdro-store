@@ -40,7 +40,7 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setProducts(
-      JSON.parse(localStorage.getItem("@pdr-store/cart-products")!),
+      JSON.parse(localStorage.getItem("@pdr-store/cart-products") || "[]"),
     );
   }, []);
 
