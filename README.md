@@ -1,3 +1,52 @@
+<h1 align="center"> PDR-Store </h1>
+
+<p align="center">
+Este projeto foi feito durante fullstack week do Felipe Rocha. <br/>
+</p>
+
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>
+</p>
+
+<br>
+
+<p align="center">
+  <img alt="projeto PDR-Store" src=".github/preview.jpg" width="100%">
+</p>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- Next 14
+- TypeScript
+- Tailwindcss
+- Git e Github
+- Shadcn UI
+- Prisma
+- Postgresql
+- Next-auth
+- Stripe
+---
+
+
+## 💻 Projeto
+
+O "PDR-Store" é um E-Commerce de vendas de periféricos como monitores, mouses, teclados, fones.
+
+- [Acesse o projeto finalizado, online](https://pdro-store-pdro-h0.vercel.app/)
+---
+
+## 🔖 Layout
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/Y8jmabSZXxAobeUJQdI4bm/FSW-Store-%5BLive%5D?type=design&node-id=89-280&mode=design). É necessário ter conta no [Figma](https://figma.com) para acessá-lo. 
+
+---
+
+Feito com ♥ by Pedro Henrique
+
+---
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -10,8 +59,6 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
