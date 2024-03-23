@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 
 import { signIn, signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+
+import { CartContext } from "@/app/providers/cart";
 
 import Link from "next/link";
 
@@ -33,6 +35,10 @@ import {
 
 const Header = () => {
   const { status, data } = useSession();
+
+  const { products } = useContext(CartContext)
+
+  const cartProductQunatity = products.length
 
   return (
     <Card className="flex items-center justify-between p-[1.875rem]">
@@ -158,7 +164,12 @@ const Header = () => {
         </div>
         <Sheet>
           <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
+            <Button size="icon" variant="outline" className="relative">
+              {cartProductQunatity > 0 && (
+                <div className = "absolute bottom-7 left-7 bg-primary rounded-lg px-2">
+                  {cartProductQunatity}
+                </div>
+              )}
               <ShoppingCartIcon />
             </Button>
           </SheetTrigger>
