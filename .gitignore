@@ -21,6 +21,8 @@
 *.pem
 
 .env
+app/newProduct
+app/api/products
 
 # debug
 npm-debug.log*
